@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/mvc
+						http://www.springframework.org/schema/mvc/spring-mvc.xsd
+						http://www.springframework.org/schema/context
+       					http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/aop
+                        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <context:component-scan base-package="com.lz"/>
+
+    <!-- 加载解析 @rquestMapping等注解的解析器 -->
+    <mvc:annotation-driven/>
+    <!-- 静态资源放行 -->
+    <mvc:default-servlet-handler/>
+
+
+    <!-- 视图解析器 -->
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/ftl/"/>
+        <property name="suffix" value=".ftl"/>
+    </bean>-->
+    <!-- 开启aop，对类代理 -->
+    <!--一定要写在最先加载的xml中，写在后面加载的xml中也不起作用-->
+</beans>
